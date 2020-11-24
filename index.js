@@ -31,21 +31,12 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 client.on("ready", () => {
   console.log(`Bot has started, with ${client.users.cache.size} users, in ${client.channels.cache.size} channels of ${client.guilds.cache.size} guilds.`);
-  const activities_list = [
-    "| $help For Command!", 
-    "| Joined 6 DCServers!", 
-    "| Yeah, It's ESAS!",
-    "| V2.0-E03-B13",
-    "| Made in Cambodia",
-    "| Made by Admin EG!"
-    ];
-  setInterval(() => {
-    const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-    client.user.setActivity(activities_list[index]); // sets bot's activities to one of the phrases in the arraylist.
-  }, 5000); // Runs this every 10 seconds.
   console.log(`${client.user.username} ready!`);
-  //client.user.setActivity(`${PREFIX}help`);
+  client.user.setActivity(`${PREFIX}help`);
+  //
 });
+
+
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
 
